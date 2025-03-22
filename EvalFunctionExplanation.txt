@@ -1,0 +1,27 @@
+HARMANPREET kaur
+1002273536
+Artificial  Intelligence
+
+
+Evaluation Function for Red-Blue Nim
+
+The evaluation function is designed to score game states for the AI using MinMax with depth-limited search and alpha-beta pruning. 
+This function guides the AI in making the best possible move at each turn.
+
+Standard Version (Minimizing Points)
+In the standard version of the game, the goal is to minimize the score by losing marbles as quickly as possible.
+The evaluation function returns a negative score, calculated as:
+score = -2 * red - 3 * blue
+This formula assigns a greater penalty to blue marbles because they contribute more points when the game ends. 
+By minimizing this score, the AI aims to leave fewer marbles on the board.
+
+Misère Version (Maximizing Points)
+In the misère version, the goal is to maximize the score by keeping marbles on the board longer. 
+The evaluation function returns a positive score, calculated as:
+score = 2 * red + 3 * blue
+This formula assigns more weight to blue marbles, encouraging the AI to prioritize keeping them on the board.
+
+Why This Works
+The function is designed to reflect the win/loss conditions for both versions. 
+During the MinMax search, the AI evaluates game states using these scores and makes moves that improve its position.
+This approach balances short-term and long-term strategies based on the depth-limited search.
